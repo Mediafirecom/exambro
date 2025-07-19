@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exambro Exampatra</title>
+  <style>
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to bottom right, #2196f3, #3f51b5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: white;
+  flex-direction: column;
+}
+
+.page {
+  width: 100%;
+  max-width: 420px;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.08); /* lebih halus dari 0.1 */
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 25px;
+  border-radius: 30px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  width: 90%;
+  text-align: center;
+  position: relative;
+}
+
+.logo img {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 20px;
+  border-radius: 100%;
+  border: 1px solid white;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+}
+
+h2 {
+  color: white;
+  font-size: 18px;
+  margin: 0 0 10px;
+  font-weight: 700;
+  line-height: 1.4;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+  text-transform: uppercase;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.3);
+  margin: 15px 0;
+  font-size: 14px;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  backdrop-filter: blur(3px);
+  outline: none;
+}
+
+input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+  font-style: italic;
+}
+
+.btn-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+button {
+  width: 100%;
+  color: white;
+  font-weight: bold;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.2s;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  letter-spacing: 2px;
+}
+
+button:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.btn-primary {
+  background: #ff9800; /* orange */
+}
+
+.btn-secondary {
+  background: #03A9F4; /* biru scan */
+}
+
+.btn-warning {
+  background: #FF5722; /* merah keluar */
+}
+
+iframe {
+  width: 100%;
+  height: 500px;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  background: white;
+}
+
+.controls {
+  width: 100%;
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.controls button {
+  flex: 1;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 8px;
+}
+
+.info-box {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 15px;
+  color: #333;
+  font-size: 14px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  width: 100%;
+  box-sizing: border-box;
+  display: none;
+}
+
+.footer {
+  color: white;
+  margin-top: 25px;
+  font-size: 14px;
+  text-align: center;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+#webviewPage {
+  display: none;
+}
+
+.back-btn {
+  margin-bottom: 15px;
+  align-self: flex-start;
+}
+  </style>
+</head>
+<body>
+
+<!-- Input Page -->
+<div class="page" id="inputPage">
+  <div class="card">
+    <div class="logo">
+      <img src="https://files.catbox.moe/kwu1a3.png">
+    </div>
+    <h2>SELAMAT DATANG DI<br>EXAMBRO EXAMPATRA</h2>
+    
+    <div class="error-box" id="errorBox"></div>
+    
+    <input type="text" id="urlInput" placeholder="Input URL">
+    
+    <div class="btn-container">
+      <button class="btn-primary" onclick="handleMulai()">MULAI</button>
+      <button class="btn-secondary" onclick="handleBarcode()">CBT MATANSA</button>
+      <button class="btn-warning" onclick="keluar()">KELUAR</button>
+    </div>
+  </div>
+  <div class="footer">Astryx Dev</div>
+</div>
+
+<!-- Webview Page -->
+<div class="page" id="webviewPage">
+  <button class="btn-primary back-btn" onclick="backToInput()">← Kembali</button>
+  
+  <iframe id="frameView"></iframe>
+  
+  <div class="controls">
+    <button class="btn-primary" onclick="fullscreen()">Full Screen</button>
+    <button class="btn-primary" onclick="refreshIframe()">Refresh</button>
+    <button class="btn-primary" onclick="cekAgent()">User Agent</button>
+  </div>
+  
+  <div id="info" class="info-box"></div>
+  <div class="footer">Astryx Dev</div>
+</div>
+
+<script>
+  const inputPage = document.getElementById("inputPage");
+  const webviewPage = document.getElementById("webviewPage");
+  const frame = document.getElementById("frameView");
+  const infoBox = document.getElementById("info");
+  const errorBox = document.getElementById("errorBox");
+  const urlInput = document.getElementById("urlInput");
+
+  function showError(message) {
+    errorBox.textContent = message;
+    errorBox.style.display = 'block';
+    setTimeout(() => errorBox.style.display = 'none', 3000);
+  }
+
+  function handleMulai() {
+    const url = urlInput.value.trim();
+    
+    if (!url) {
+      showError("Silakan masukkan URL terlebih dahulu");
+      return;
+    }
+    
+    try {
+      new URL(url.startsWith('http') ? url : `http://${url}`);
+    } catch (e) {
+      showError("Format URL tidak valid");
+      return;
+    }
+    
+    openWebview(url);
+  }
+
+  function handleBarcode() {
+    openWebview("https://cbt.mtsn1kebumen.sch.id");
+  }
+
+  function openWebview(url) {
+    const finalUrl = url.startsWith('http') ? url : `http://${url}`;
+    frame.src = finalUrl;
+    inputPage.style.display = 'none';
+    webviewPage.style.display = 'flex';
+    infoBox.style.display = 'none';
+  }
+
+  function backToInput() {
+    inputPage.style.display = 'flex';
+    webviewPage.style.display = 'none';
+    urlInput.value = '';
+  }
+
+  function keluar() {
+    if (confirm("Apakah Anda yakin ingin keluar?")) {
+      window.close();
+      window.location.href = 'about:blank';
+    }
+  }
+
+  function fullscreen() {
+    if (frame.requestFullscreen) {
+      frame.requestFullscreen();
+    } else if (frame.webkitRequestFullscreen) {
+      frame.webkitRequestFullscreen();
+    } else if (frame.msRequestFullscreen) {
+      frame.msRequestFullscreen();
+    }
+  }
+
+  function refreshIframe() {
+    if (frame.src) {
+      frame.src = frame.src;
+    }
+  }
+
+  function cekAgent() {
+    const agent = navigator.userAgent;
+    infoBox.style.display = "block";
+    infoBox.innerHTML = "<strong>User Agent:</strong><br>" + agent;
+  }
+
+  urlInput.addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+      handleMulai();
+    }
+  });
+</script>
+
+</body>
+</html>
