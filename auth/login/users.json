@@ -1,5 +1,5 @@
-{ 
-    "users": [
+{
+  "users": [
     {
       "username": "javas",
       "password": "S!7rG#p4vL9qZ0x8tW2",
@@ -19,6 +19,11 @@
       "username": "dafaganteng",
       "password": "dafaganteng#123",
       "role": "users"
+    },
+    {
+      "username": "testuser",
+      "password": "12345",
+      "role": "users"
     }
-  ] 
+  ]
 }
