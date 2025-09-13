@@ -1,0 +1,20 @@
+{
+  "users": [
+    {
+      "username": "javas",
+      "password": "S!7rG#p4vL9qZ0x8tW2",
+      "role": "admin"
+    },
+    {
+      "username": "nawa",
+      "password": "kP3$w8NfT6zQ1uVyB9m",
+      "role": "users"
+    },
+    {
+      "username": "rasya",
+      "password": "R8m@f2Lx#Y5bV0pZc7Q"
+      ,
+      "role": "users"
+    }
+  ]
+}
