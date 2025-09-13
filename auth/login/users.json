@@ -24,6 +24,11 @@
       "username": "testuser",
       "password": "12345",
       "role": "users"
+    },
+    {
+      "username": "alip",
+      "password": "yonoyono123",
+      "role": "users"
     }
   ]
 }
