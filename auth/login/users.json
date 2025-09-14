@@ -8,7 +8,8 @@
     {
       "username": "nawa",
       "password": "kP3$w8NfT6zQ1uVyB9m",
-      "role": "users"
+      "role": "users",
+      "blocked": false
     },
     {
       "username": "rasya",
