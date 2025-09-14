@@ -28,7 +28,8 @@
     {
       "username": "TestBot",
       "password": "k5^E3-DCHGe<",
-      "role": "user"
+      "role": "user",
+      "blocked": true
     }
   ]
 }
