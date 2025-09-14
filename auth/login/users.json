@@ -28,6 +28,11 @@
       "password": "yonoyono123",
       "role": "users",
       "blocked": false
+    },
+    {
+      "username": "adya",
+      "password": "y%[$82SAEDx2",
+      "role": "users"
     }
   ]
 }
