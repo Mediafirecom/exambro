@@ -24,6 +24,11 @@
       "username": "alip",
       "password": "yonoyono123",
       "role": "users"
+    },
+    {
+      "username": "TestBot",
+      "password": "k5^E3-DCHGe<",
+      "role": "user"
     }
   ]
 }
