@@ -20,7 +20,8 @@
     {
       "username": "dafaganteng",
       "password": "dafaganteng#123",
-      "role": "users"
+      "role": "users",
+      "blocked": false
     },
     {
       "username": "alip",
