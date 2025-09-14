@@ -14,7 +14,8 @@
     {
       "username": "rasya",
       "password": "R8m@f2Lx#Y5bV0pZc7Q",
-      "role": "users"
+      "role": "users",
+      "blocked": false
     },
     {
       "username": "dafaganteng",
