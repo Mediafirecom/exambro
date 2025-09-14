@@ -23,7 +23,8 @@
     {
       "username": "alip",
       "password": "yonoyono123",
-      "role": "users"
+      "role": "user",
+      "blocked": false
     }
   ]
 }
