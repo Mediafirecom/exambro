@@ -35,6 +35,11 @@
       "password": "testbot123",
       "role": "users",
       "blocked": true
+    },
+    {
+      "username": "Kingjah",
+      "password": "nawaganteng123",
+      "role": "admin"
     }
   ]
 }
