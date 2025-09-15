@@ -34,6 +34,11 @@
       "password": "y%[$82SAEDx2",
       "role": "users",
       "blocked": false
+    },
+    {
+      "username": "testBot",
+      "password": "testbot123",
+      "role": "users"
     }
   ]
 }
