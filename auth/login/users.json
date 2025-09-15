@@ -3,7 +3,8 @@
     {
       "username": "Javazz",
       "password": "S17rG#p4vL9qZ0x8tW2",
-      "role": "owner"
+      "role": "owner",
+      "blocked": false
     },
     {
       "username": "nawa",
