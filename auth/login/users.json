@@ -32,7 +32,8 @@
     {
       "username": "adya",
       "password": "y%[$82SAEDx2",
-      "role": "users"
+      "role": "users",
+      "blocked": true
     }
   ]
 }
