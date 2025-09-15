@@ -38,7 +38,8 @@
     {
       "username": "testBot",
       "password": "testbot123",
-      "role": "users"
+      "role": "users",
+      "blocked": true
     }
   ]
 }
