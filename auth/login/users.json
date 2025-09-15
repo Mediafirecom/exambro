@@ -39,7 +39,7 @@
       "username": "testBot",
       "password": "testbot123",
       "role": "users",
-      "blocked": true
+      "blocked": false
     }
   ]
 }
