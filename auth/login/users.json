@@ -40,6 +40,11 @@
       "username": "Kingjah",
       "password": "nawaganteng123",
       "role": "admin"
+    },
+    {
+      "username": "nizam",
+      "password": "nizamatlet123",
+      "role": "users"
     }
   ]
 }
