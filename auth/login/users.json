@@ -28,7 +28,7 @@
       "username": "adya",
       "password": "y%[$82SAEDx2",
       "role": "users",
-      "blocked": true
+      "blocked": false
     },
     {
       "username": "testBot",
