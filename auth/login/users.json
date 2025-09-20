@@ -45,6 +45,11 @@
       "username": "nizam",
       "password": "nizamatlet123",
       "role": "users"
+    },
+    {
+      "username": "azmi",
+      "password": "azmiganteng123",
+      "role": "users"
     }
   ]
 }
