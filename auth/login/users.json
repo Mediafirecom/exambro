@@ -50,6 +50,11 @@
       "username": "azmi",
       "password": "azmiganteng123",
       "role": "users"
+    },
+    {
+      "username": "sahid",
+      "password": "assahid123",
+      "role": "users"
     }
   ]
 }
